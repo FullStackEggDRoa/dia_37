@@ -1,19 +1,17 @@
 /*
-    EJERCICIO 16:
-    Realizar un algoritmo que rellene un vector de tamaño N con valores aleatorios y le pida al
-    usuario un numero a buscar en el vector. El programa mostrará donde se encuentra el
-    numero y si se encuentra repetido
+    EJERCICIO 17:
+    Recorrer un vector de N enteros contabilizando cuántos números son de 1 dígito, cuántos
+    de 2 dígitos, etcétera (hasta 5 dígitos).
  */
-package ejercicio_16;
+package ejercicio_17;
 
-import java.lang.Math;
 import java.util.Scanner;
 
 /**
  *
  * @author droa
  */
-public class Ejercicio_16 {
+public class Ejercicio_17 {
 
     /**
      * @param args the command line arguments
@@ -23,11 +21,11 @@ public class Ejercicio_16 {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese la longitud del vector: ");
         int l=leer.nextInt();
-        System.out.println("Rellenando con números aleatorios para el vector de longitud ["+l+"] .....");
+        System.out.println("Rellenando con números aleatorios para el vector de longitud ["+l+"] con valores del 1 al 5 ");
         int[] numeros = new int[l];
         llenarVectorAleatorio(numeros);
         
-        System.out.println("Ingrese el número a buscar, entre : 1 hasta "+l+": ");
+        System.out.println("Buscando valores de 1 hasta 5 ");
         int num=leer.nextInt();
         System.out.println("Buscando Nume");
         buscarEnVector(numeros,num);
@@ -42,19 +40,32 @@ public class Ejercicio_16 {
         for(int i=0; i < vector.length;i++ ){
             //Cacular longitud del vector
             int l=vector.length;
-            vector[i]=(int)(Math.random()*l);
+            vector[i]=(int)(Math.random()*0.4)+1;
             
         }
     }
     
     public static void buscarEnVector(int[] vector,int val){
         
-        boolean encontrado=true;
+        int sumatoria_1=0;
+        int sumatoria_2=0;
+        int sumatoria_3=0;
+        int sumatoria_4=0;
+        int sumatoria_5=0;
+        
         String aux="";
+        
         for(int i=0; i<vector.length; i++){
-            if(vector[i]==val){
-                aux+=" "+i;
+            int num;
+            switch(num){
+                case 1:
+                    
                 break;
+                    
+                case 2:
+                case 3:
+                case 4:
+                case 5:    
             }
             
         }
@@ -74,4 +85,5 @@ public class Ejercicio_16 {
         }
         System.out.println("Vector: {"+aux+" }");
     }
+    
 }
