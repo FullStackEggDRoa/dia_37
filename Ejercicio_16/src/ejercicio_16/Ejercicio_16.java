@@ -29,7 +29,7 @@ public class Ejercicio_16 {
         
         System.out.println("Ingrese el número a buscar, entre : 1 hasta "+l+": ");
         int num=leer.nextInt();
-        System.out.println("Buscando Nume");
+        System.out.println("Buscando Número en el Vector: ");
         buscarEnVector(numeros,num);
         
         System.out.println("Mostrando Vector .... ");

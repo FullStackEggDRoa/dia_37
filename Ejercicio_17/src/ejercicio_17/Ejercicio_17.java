@@ -25,10 +25,10 @@ public class Ejercicio_17 {
         int[] numeros = new int[l];
         llenarVectorAleatorio(numeros);
         
-        System.out.println("Buscando valores de 1 hasta 5 ");
-        int num=leer.nextInt();
-        System.out.println("Buscando Nume");
-        buscarEnVector(numeros,num);
+        System.out.println("Buscando cuantos numeros existe en el vector de 1,2 hasta 5 ");
+        
+        
+        buscarEnVector(numeros);
         
         System.out.println("Mostrando Vector .... ");
         mostrarVector(numeros);
@@ -40,41 +40,60 @@ public class Ejercicio_17 {
         for(int i=0; i < vector.length;i++ ){
             //Cacular longitud del vector
             int l=vector.length;
-            vector[i]=(int)(Math.random()*0.4)+1;
+            vector[i]=(int)(Math.random()*4)+1;
             
         }
     }
     
-    public static void buscarEnVector(int[] vector,int val){
+    public static void buscarEnVector(int[] vector){
         
         int sumatoria_1=0;
         int sumatoria_2=0;
         int sumatoria_3=0;
         int sumatoria_4=0;
         int sumatoria_5=0;
-        
+        int j=0;
         String aux="";
         
         for(int i=0; i<vector.length; i++){
-            int num;
-            switch(num){
-                case 1:
-                    
-                break;
-                    
-                case 2:
-                case 3:
-                case 4:
-                case 5:    
+            for(j=1;j<=5;j++)
+            {
+                switch(j){
+                    case 1:
+                        if(vector[i]==1){
+                            sumatoria_1++;
+                        }
+                    break;
+
+                    case 2:
+                        if(vector[i]==2){
+                            sumatoria_2++;
+                        }
+                        break;
+                    case 3:
+                        if(vector[i]==3){
+                            sumatoria_3++;
+                        }
+                        break;
+                    case 4:
+                        if(vector[i]==4){
+                            sumatoria_4++;
+                        }
+                        break;
+                    case 5:
+                        if(vector[i]==5){
+                            sumatoria_5++;
+                        }
+                        break;
+                }
             }
-            
         }
-        if(aux==""){
-            System.out.println("El número Ingresado NO se encuentra en el Vector.");
-        }else{
-            System.out.println("El número Ingresado se encuentra en la(s) posición(es) ["+aux+"] en el Vector.");
-        }
-        
+        System.out.println("Resultados:");
+        System.out.println("Cantidad de 1 en el Vector: "+sumatoria_1);
+        System.out.println("Cantidad de 2 en el Vector: "+sumatoria_2);
+        System.out.println("Cantidad de 3 en el Vector: "+sumatoria_3);
+        System.out.println("Cantidad de 4 en el Vector: "+sumatoria_4);
+        System.out.println("Cantidad de 5 en el Vector: "+sumatoria_5);
     }
     
     public static void mostrarVector(int[] vector){
