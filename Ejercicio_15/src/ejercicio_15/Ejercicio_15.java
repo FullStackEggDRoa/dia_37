@@ -16,7 +16,7 @@ public class Ejercicio_15 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Rellenando vector 100 Primeros números entereos");
+        System.out.println("Rellenando vector 100 Primeros números enteros");
         int[] numeros = new int[100];
         llenarVector(numeros);
         System.out.println("Mostrando Vector .... ");

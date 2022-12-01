@@ -6,7 +6,7 @@
  */
 package ejercicio_16;
 
-import static java.lang.Math.pow;
+import java.lang.Math;
 import java.util.Scanner;
 
 /**
@@ -29,7 +29,11 @@ public class Ejercicio_16 {
         
         System.out.println("Ingrese el número a buscar, entre : 1 hasta "+l+": ");
         int num=leer.nextInt();
+<<<<<<< HEAD
         System.out.println("Buscando un Numero");
+=======
+        System.out.println("Buscando Número en el Vector: ");
+>>>>>>> 9a1bc98977deb3842d3d354374a96e756f11348c
         buscarEnVector(numeros,num);
         
         System.out.println("Mostrando Vector .... ");
