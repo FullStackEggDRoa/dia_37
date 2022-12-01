@@ -38,13 +38,14 @@ public class Ejercicio21{
         for (int i = 0; i < M2.length; i++) {
             for (int j = 0; j < M2.length; j++) {
 
-                System.out.println("Ingrese un Numero - MatrizPos[" + i + "][" + j + "]:");
-                M2[i][j] = read.nextInt();
-
+                //System.out.println("Ingrese un Numero - MatrizPos[" + i + "][" + j + "]:");
+                //M2[i][j] = read.nextInt();
+                
             }
             System.out.println("Siguiente fila");
 
         }
+        
     }
     
     public static void EncontrarMatrizDos(int [][] M1,int [][] M2,int [] PocicionM2i ,int [] PocicionM2j) {
@@ -119,19 +120,23 @@ public class Ejercicio21{
         int N1 = read.nextInt();
         System.out.println("Ingrese el tamaño de la matriz numero 2:");
         int N2 = read.nextInt();
+        
         //Inicializamos las matrices con sus respectivos tamaños
       
-        int [][] M1 = new int [N1][N1];
-        int [][] M2 = new int [N2][N2];
+        //int [][] M1 = new int [N1][N1];
+        //int [][] M2 = new int [N2][N2];
+        int[][] M1 = {{1, 26, 36, 47, 5, 6, 72, 81, 95, 10}, {11, 12, 13, 21, 41, 22, 67, 20, 10, 61}, {56, 78, 87, 90, 9, 90, 17, 12, 87, 67}, {41, 87, 24, 56, 97, 74, 87, 42, 65, 35}, {32, 76, 79, 1, 36, 5, 67, 96, 12, 11},{99, 13, 54, 88, 89, 90, 75, 12, 41, 76}, {67, 78, 87, 45, 14, 22, 26, 42, 56, 78}, {98, 45, 34, 23, 32, 56, 74, 16, 19, 18},{24, 67, 97, 46, 87, 13, 67, 89, 93, 24}, {21, 68, 78, 98, 90, 67, 12, 41, 65, 12}};
+        int[][] M2 = {{36, 5, 67}, {89, 90, 75}, {14, 22, 26}};
         
-        //Inicializamos dos vectores Auxiliares
+        
+        //Inicializamos 1os vectores Auxiliares
         
         int [] PocicionM2i = new int [N2*N2];
         int [] PocicionM2j = new int [N2*N2];
         
         //Llamamos a las funciones
-        System.out.println("Rellenando Matrices .... ");
-        RellenarMatriz(M1,M2);
+        //System.out.println("Rellenando Matrices .... ");
+        //RellenarMatriz(M1,M2);
         System.out.println("Mostrando Matrices Matrices ....");
         MostrarMatriz(M1,M2);
         System.out.println("Buscando Matriz 2 en Matriz 1 .... ");
