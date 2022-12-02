@@ -20,27 +20,32 @@ public class Ejercicio21{
     static Random rand = new Random();
     
     
-        public static void RellenarMatriz(int [][] M1,int [][] M2){
-            //Este Sub solo rellene las matrices pidiendo que se ingresen los valores por consola
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                System.out.println("Ingrese un Numero:");
-                    M1[i][j] = read.nextInt();
-                    
+        public static void RellenarMatriz(int[][] M1, int[][] M2) {
+        //Este Sub solo rellene las matrices pidiendo que se ingresen los valores por consola
+         System.out.println("Ingresar Valores Matriz No. 1");
+        for (int i = 0; i < M1.length; i++) {
+            for (int j = 0; j < M1.length; j++) {
+               
+                System.out.println("Fila No.[" + (i + 1) + "]");
+                System.out.println("Ingrese un Numero - MatrizPos[" + i + "][" + j + "]:");
+                M1[i][j] = read.nextInt();
+
             }
             System.out.println("Siguente fila");
-            
+
         }
-            System.out.println("Rellenar matriz 2");
-          for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.println("Ingrese un Numero:");
-                    M2[i][j] = read.nextInt();
-                    
+        System.out.println("Ingresar Valores Matriz No. 2");
+        for (int i = 0; i < M2.length; i++) {
+            for (int j = 0; j < M2.length; j++) {
+
+                //System.out.println("Ingrese un Numero - MatrizPos[" + i + "][" + j + "]:");
+                //M2[i][j] = read.nextInt();
+                
             }
-              System.out.println("Siguiente fila");
-            
+            System.out.println("Siguiente fila");
+
         }
+        
     }
     
     public static void EncontrarMatrizDos(int [][] M1,int [][] M2,int [] PocicionM2i ,int [] PocicionM2j) {
@@ -50,50 +55,42 @@ public class Ejercicio21{
         int i2 =0,j2=0, i3 =0, j3=0;
         
         
-        
-        for (int i = 0; i < 6; i++) {
+        // Busqueda de primera coincidencia.
+        for (int i = 0; i < M1.length; i++) {
             if (pos1i != -1) {
                 break;
             }
-           for (int j = 0; j < 6; j++) {
+           for (int j = 0; j < M1.length; j++) {
                 if (M1[i][j]== M2[i2][j2]) {
                     
-                    pos1i = i;
+                    pos1i=i;
                     pos1j=j;
-                    
-                    
+                 
                 }
-             
-                
+               
             }
-          
-           
-           
+       
         }
         
-        
-        System.out.println(pos1i+"y"+pos1j);
-        for (int i = pos1i; i < pos1i+3; i++) {
-            
-            
-            for (int j = pos1j; j < pos1j+3; j++) {
-                if (M1[i][j]== M2[i2][j2]){
+        System.out.println("Validadno los demás elementos de acuerdo a esta posición:");
+        System.out.println("Posicion en Matriz 1 ["+pos1i + "]["+ pos1j+"]");
+        for (int i = pos1i; i < pos1i + M2.length; i++) {
+
+            for (int j = pos1j; j < pos1j + M2.length; j++) {
+                if (M1[i][j] == M2[i2][j2]) {
                     PocicionM2i[i3] = i;
-                PocicionM2j[j3] = j;
-               
-                
-                 }
-                 j3=j3+1; 
-                
-                 j2=j2+1;
+                    PocicionM2j[j3] = j;
+                }
+                j3++;
+                j2++;
             }
             
             j2=pos1j;
-            i3=i3+1;
-            i2=i2+1;
+            i3++;
+            i2++;
            
         }
-        for (int i = 0; i < 10-1; i++) {
+        for (int i = 0; i < PocicionM2i.length; i++) {
             System.out.println("i"+PocicionM2i[i]+"j"+PocicionM2j[i]);
         }
              
@@ -103,39 +100,46 @@ public class Ejercicio21{
     public static void MostrarMatriz (int [][]M1,int [][] M2){
         
         //Este Sub solamente mostrara las matrices
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < M1.length; i++) {
+            for (int j = 0; j < M1.length; j++) {
                 System.out.print("["+M1[i][j]+"]");
             }
             System.out.println(" ");
         }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < M2.length; i++) {
+            for (int j = 0; j < M2.length; j++) {
                 System.out.print("["+M2[i][j]+"]");
             }
             System.out.println(" ");
         }
     }
     public static void main(String[] args) {
+        
         //Pedimos tamaños de matrices
         System.out.println("Ingrese el tamaño de la matriz numero 1:");
         int N1 = read.nextInt();
         System.out.println("Ingrese el tamaño de la matriz numero 2:");
         int N2 = read.nextInt();
+        
         //Inicializamos las matrices con sus respectivos tamaños
       
-        int [][] M1 = new int [N1][N1];
-        int [][] M2 = new int [N2][N2];
+        //int [][] M1 = new int [N1][N1];
+        //int [][] M2 = new int [N2][N2];
+        int[][] M1 = {{1, 26, 36, 47, 5, 6, 72, 81, 95, 10}, {11, 12, 13, 21, 41, 22, 67, 20, 10, 61}, {56, 78, 87, 90, 9, 90, 17, 12, 87, 67}, {41, 87, 24, 56, 97, 74, 87, 42, 65, 35}, {32, 76, 79, 1, 36, 5, 67, 96, 12, 11},{99, 13, 54, 88, 89, 90, 75, 12, 41, 76}, {67, 78, 87, 45, 14, 22, 26, 42, 56, 78}, {98, 45, 34, 23, 32, 56, 74, 16, 19, 18},{24, 67, 97, 46, 87, 13, 67, 89, 93, 24}, {21, 68, 78, 98, 90, 67, 12, 41, 65, 12}};
+        int[][] M2 = {{36, 5, 67}, {89, 90, 75}, {14, 22, 26}};
         
-        //Inicializamos dos vectores Auxiliares
+        
+        //Inicializamos 1os vectores Auxiliares
         
         int [] PocicionM2i = new int [N2*N2];
         int [] PocicionM2j = new int [N2*N2];
         
         //Llamamos a las funciones
-        
-        RellenarMatriz(M1,M2);
+        //System.out.println("Rellenando Matrices .... ");
+        //RellenarMatriz(M1,M2);
+        System.out.println("Mostrando Matrices Matrices ....");
         MostrarMatriz(M1,M2);
+        System.out.println("Buscando Matriz 2 en Matriz 1 .... ");
         EncontrarMatrizDos(M1,M2,PocicionM2i,PocicionM2j);
         
     }
