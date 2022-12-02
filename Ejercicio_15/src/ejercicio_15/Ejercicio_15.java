@@ -21,23 +21,23 @@ public class Ejercicio_15 {
         llenarVector(numeros);
         System.out.println("Mostrando Vector .... ");
         mostrarVector(numeros);
-       
-        
+
     }
-    public static void llenarVector(int[] vector){
-        
-        for(int i=0; i < vector.length;i++ ){
-            vector[i]=i+1;
-            
+
+    public static void llenarVector(int[] vector) {
+
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = i + 1;
+
         }
     }
-    public static void mostrarVector(int[] vector){
-        String aux="";
-        
-        for(int i=vector.length-1; i>=0; i--){
+
+    public static void mostrarVector(int[] vector) {
+        String aux = "";
+
+        for (int i = vector.length - 1; i >= 0; i--) {
             aux += " " + vector[i];
         }
         System.out.println(aux);
     }
 }
-
