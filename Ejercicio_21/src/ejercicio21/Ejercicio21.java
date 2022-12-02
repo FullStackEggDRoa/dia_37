@@ -1,7 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    EJERCICIO 21:
+
+    Dadas dos matrices cuadradas de números enteros, la matriz M de 10x10 y la matriz P de
+    3x3, se solicita escribir un programa en el cual se compruebe si la matriz P está contenida
+    dentro de la matriz M. Para ello se debe verificar si entre todas las submatrices de 3x3 que
+    se pueden formar en la matriz M, desplazándose por filas o columnas, existe al menos una
+    que coincida con la matriz P. En ese caso, el programa debe indicar la fila y la columna de
+    la matriz M en la cual empieza el primer elemento de la submatriz P.
  */
 package ejercicio21;
 
@@ -99,7 +104,6 @@ public class Ejercicio21{
                             //PocicionM2i[i3] = i;
                             //PocicionM2j[j3] = j;
                             encontrada=true;
-                            break;
                         }
                     }
 
@@ -137,12 +141,14 @@ public class Ejercicio21{
     public static void MostrarMatriz (int [][]M1,int [][] M2){
         
         //Este Sub solamente mostrara las matrices
+        System.out.println("Matriz 1:");
         for (int i = 0; i < M1.length; i++) {
             for (int j = 0; j < M1.length; j++) {
                 System.out.print("["+M1[i][j]+"]");
             }
             System.out.println(" ");
         }
+        System.out.println("Matriz 2:");
         for (int i = 0; i < M2.length; i++) {
             for (int j = 0; j < M2.length; j++) {
                 System.out.print("["+M2[i][j]+"]");
